@@ -1,0 +1,59 @@
+.swiper-slide{
+      font-size: 18px;
+      background: white;
+      @include mobile{
+      }
+      /* Center slide text vertically */
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+}
+
+.my-collection{
+      margin: 3rem 0rem;
+      h1{
+            border-bottom: 2px solid $gray;
+            margin-bottom: 1em;
+      }
+      .icon{
+            color: $brown;
+      }
+      .my-card{
+            position:relative;
+            width: 100%;
+            height: 100%;
+      }
+      .my-card-header{
+            position: relative;
+            width:100%;
+            figure{
+                  width:100%;
+            }
+            img{
+                  width: 100%;
+                  margin-bottom:-8px;
+            }
+            >span{
+                  position:absolute;
+                  background-color:rgba(0,0,0,0.3);
+                  width: 100%;
+                  height: 100%;
+                  left:0px;
+                  top:0px;
+                  right: 0px;
+                  z-index:100;
+                  display:none;
+            }
+            &:hover span{
+                  align-items: center;
+                  justify-content: center;
+                  display:flex;
+                  a{
+                        color:$gray-lighter;
+                        &:hover{
+                              color:white;
+                        }
+                  }
+            }
+      }
+}
