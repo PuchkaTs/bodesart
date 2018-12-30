@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'birth', 'about', 'photo'
     ];
 
     /**
@@ -27,4 +27,34 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $dates = [
+        'birth',
+    ];
+
+    public function role()
+    {
+        return $this->belongsTo('App\Role', 'role_id');
+    }
+
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
+
+    public function language(){
+        return $this->belongsTo('App\Language');
+    }
+
+    public function getListOfArtists(){
+
+        $locale = session('locale', 'en');
+
+        $language = Language::where('slug', $locale)->first();
+
+         $artists = $language->artists()->whereHas('role', function($q){
+            $q->where('name', 'Artist');
+        })->get();
+
+        return $artists;
+    }
 }

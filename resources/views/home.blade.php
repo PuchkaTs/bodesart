@@ -1,11 +1,12 @@
+@inject('galleries', 'App\Gallery')
+
 @extends('layouts/main')
 
 @section('body')
 	@include('layouts.partials.mainbanner')
-	<div class="container">
-		@include('layouts.partials.collection')
-	</div>
-
+    @include('layouts.partials.collection')
+    @include('layouts.partials.middlebanner')
+    @include('layouts.partials.artists')
 @stop
 
 @section('script')
@@ -16,6 +17,7 @@
     // Optional parameters
     direction: 'horizontal',
     loop: true,
+    lazy: true,
 	slidesPerView: 1,
     // If we need pagination
 	autoplay: {
@@ -35,14 +37,16 @@
   })
 
   // swiper for collection
+  @foreach($galleries->getListOfGalls() as $gallery)
 
-  var mySwiper = new Swiper ('#collection-swiper', {
+  var mySwiper = new Swiper ('#collection-{{$gallery->id}}-swiper', {
     // Optional parameters
 	slidesPerView: 3,
 	spaceBetween: 30,
 	slidesPerGroup: 3,
     direction: 'horizontal',
     loop: true,
+    lazy: true,
     // If we need pagination
 	autoplay: {
         delay: 2500,
@@ -54,11 +58,24 @@
 
     // Navigation arrows
     navigation: {
-      nextEl: '#collection-next',
-      prevEl: '#collection-prev',
+      nextEl: '#collection-{{$gallery->id}}-next',
+      prevEl: '#collection-{{$gallery->id}}-prev',
     },
+    breakpoints: {
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+        slidesPerGroup: 2,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        slidesPerGroup: 1,
+      }
+    }
 
   })
+  @endforeach
   </script>
 
 @stop

@@ -6,6 +6,9 @@
  */
 
 require('./bootstrap');
+require('./simpleCart.js');
+require('./jquery-3.3.1.slim.min.js');
+require('./lightgallery.min.js');
 
 window.Vue = require('vue');
 window.Swiper = require('./swiper.js');
@@ -29,16 +32,34 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-function openNav() {
-  document.getElementById("myNav").style.height = "300px";
-}
 
-function closeNav() {
-  document.getElementById("myNav").style.height = "0px";
-}
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+    	currentMenus: [],
+        submenu:{
+            id:0,
+            name,
+        },
+        isMobileOpen: false,
+    },
+    methods: {
+    	openNav:function(submenus){
+    		document.getElementById("myNav").style.height = "300px";
+    		this.currentMenus = (submenus);
+    		console.log(currentMenu);
+    	},
+    	closeNav(){
+			document.getElementById("myNav").style.height = "0px";
+    	},
+        toggleMobileMenu(){
+            this.isMobileOpen =! this.isMobileOpen;
+        },
+        gotocart: function(){
+            location.replace('/cart');
+        }
+    }
 });
 
 

@@ -36,11 +36,36 @@ return array(
             'title' => 'Нууц үг',
             'type' => 'text',
         ),
-        // 'role' => array(
-        //     'type' => 'relationship',
-        //     'title' => 'Хэрэглэгчийн эрх',
-        //     'name_field' => 'name', //what column or accessor on the other table you want to use to represent this object
-        // ),
+        'birth' => array(
+            'title' => 'Төрсөн өдөр',
+            'type' => 'date',
+        ),
+        'role' => array(
+            'type' => 'relationship',
+            'title' => 'Хэрэглэгчийн төрөл',
+            'name_field' => 'name', //what column or accessor on the other table you want to use to represent this object
+        ),
+        'photo' => array(
+            'title' => 'Зураг 200x200',
+            'type' => 'image',
+            'location' => public_path() . '/assets/artists/200x200/',
+            'naming' => 'random',
+            'length' => 20,
+            'size_limit' => 2,
+            'sizes' => array(
+                array(200, 200, 'crop', public_path() . '/assets/artists/200x200/', 100),
+
+            )
+        ),
+        'about' => array(
+            'title' => 'Хэрэглэгчийн тухай',
+            'type' => 'wysiwyg',
+        ),
+        'language' => array(
+            'type' => 'relationship',
+            'title' => 'Хэл',
+            'name_field' => 'name', //what column or accessor on the other table you want to use to represent this object
+        ),
     ),
 
   

@@ -14,7 +14,22 @@ $fa-font-path:        "../webfonts";
 @import "node_modules/swiper/dist/css/swiper";
 @import 'nav';
 @import 'collection';
+@import 'middlebanner';
+@import 'artists';
+@import 'followus';
+@import 'product';
+@import 'lightgallery.css';
+@import 'artist';
+@import 'submenu';
 
+body{
+	background-color: white;
+	overflow:hidden;
+}
+h1.my-header{
+	margin-top:3rem;
+	margin-bottom:1rem;
+}
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -22,4 +37,13 @@ $fa-font-path:        "../webfonts";
 
 .swiper-container {
     width: 100%;
+}
+.box-shadow{
+	box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.margin-fix-bulma{
+	margin-bottom: -8px;
+}
+.bg-gray{
+	background-color:$gray-lighter;
 }

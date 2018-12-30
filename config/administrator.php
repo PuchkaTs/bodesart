@@ -73,7 +73,13 @@ return array(
 	 *	)
 	 */
 	'menu' => array(
-		'users'
+		'users',
+		'roles',
+		'menus',
+		'submenus',
+		'products',
+		'galleries',
+		'languages',
 	),
 
 	/**

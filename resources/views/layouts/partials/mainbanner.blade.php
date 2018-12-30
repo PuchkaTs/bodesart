@@ -3,7 +3,7 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"> <img src="assets/banners/mainbanners/cover.jpg"></div>
+        <div class="swiper-slide"> <img src="/assets/banners/mainbanners/cover.jpg"></div>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>

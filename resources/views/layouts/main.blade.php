@@ -20,5 +20,17 @@
         </div>
         <script src="{{ mix('/js/app.js') }}"></script>
         @yield('script')
+        <script>
+        simpleCart({
+          checkout: {
+            type: "SendForm",
+            email: "info@bodesart.com",
+            url: "/checkout",
+            method: "GET" ,
+            success: "success",      
+          },
+          cartStyle : "table",
+        });
+        </script>
     </body>
 </html>

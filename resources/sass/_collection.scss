@@ -1,4 +1,9 @@
+
+.collection-swiper{
+      padding: 0.5rem 1rem 0.5rem;
+}
 .swiper-slide{
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
       font-size: 18px;
       background: white;
       @include mobile{
@@ -8,10 +13,14 @@
       // justify-content: center;
       align-items: center;
 }
-
+h1#submenu{
+      margin: 0;
+      padding-top:3rem;
+      margin-bottom:1em;
+}
 .my-collection{
-      margin: 3rem 0rem;
       h1{
+            margin:3rem 1rem;
             border-bottom: 2px solid $gray;
             margin-bottom: 1em;
       }

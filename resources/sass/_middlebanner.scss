@@ -1,0 +1,28 @@
+.banner-container{
+	background-color: $gray-lighter;
+	margin-top:3rem;
+	h1{
+		margin: 1em 0;
+	}
+	h2{
+		margin: 1rem 0;
+	}
+	.container{
+		padding: 1rem;
+	}
+	.banner{
+		figure{
+			height:200px;
+			overflow:hidden;
+		}
+		img.first{
+			height:100%;
+		}
+		img.non-first{
+			width:100%;
+		}
+	}
+	.banner+.banner{
+		margin:0 1rem;
+	}
+}
